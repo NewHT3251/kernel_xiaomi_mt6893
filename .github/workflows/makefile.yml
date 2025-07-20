@@ -1,0 +1,30 @@
+name: Build Kernel
+on:
+  workflow_dispatch:
+
+jobs:
+  Build-Kernel:
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Build Kernel
+        uses: dabao1955/kernel_build_action@main
+        with:
+          kernel-url: https://github.com/NewHT3251/kernel_xiaomi_mt6893
+          kernel-dir: mt-4.14.186
+          kernel-branch: lineage-22.2
+          config: ares_defconfig
+          arch: arm64
+          aosp-gcc: true
+          aosp-clang: true
+          ksu: true
+          ksu-version: main
+          android-version: 13
+          aosp-clang-version: r383902
+          python-27: true
+          disable-lto: true
+          anykernel3: true
