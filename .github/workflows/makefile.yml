@@ -25,6 +25,5 @@ jobs:
           ksu-version: v0.9.5
           android-version: 13
           aosp-clang-version: r450784d
-          python-27: true
           disable-lto: true
           anykernel3: true
